@@ -1,0 +1,20 @@
+#first{
+    border:5px;
+    border-style: solid;
+    border-color:#1fab89;
+    background-color:#d7fbe8;
+}
+#second{
+    background-color:#62d2a2;
+}
+.third{
+    background-color:#62d2a2 ;
+}
+.forth{
+    background-color: #ffffff;
+}
+#fifth{
+    font-family: 'Dancing Script', cursive;
+    font-size:medium;
+    font-style: bold;
+}

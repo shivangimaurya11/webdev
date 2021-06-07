@@ -1,0 +1,30 @@
+nav{
+   
+    border-radius: 15px;
+    }
+ul{
+    list-style-type: none;
+}
+li{
+    float: right;
+    padding: 5px;
+    margin: 5px;
+    margin-right:15px;
+}
+a{
+    font-size: 20px;
+    font-weight: bold;
+    color:#8367c7;
+    text-decoration: none;
+}
+.shadow-sm {
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+}
+
+a:hover{
+    color:orangered;
+}
+navbar-brand{
+    height: 70px;
+    width:70px
+}

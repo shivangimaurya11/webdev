@@ -1,0 +1,62 @@
+body{
+    background-color: #e4f9f5;
+}
+img{
+    position: relative;
+    margin: 20 20 20 20;
+ }
+.one{
+    border: 10px;
+    background-color:#e23e57;
+    border-color: black;
+    border-radius: 100%;
+    height: 500px;
+    width: 500px;
+}
+.min,.sec,.hour{
+    position:relative;
+    transform-origin: bottom;
+}
+.hour{
+    background-color: black;
+    width:4px;
+    height:185px;
+    position: relative;
+    z-index: 1;
+    animation: hour_anim 60s linear infinite;
+    bottom: 430px;
+    left: 250px;
+}
+.min{
+    background-color: black;
+    width:3px;
+    height:145px;
+    position: relative;
+    z-index: 2;
+    animation: min_anim 100s linear infinite;
+    bottom: 575px;
+    left: 250px;
+}
+.sec{
+    background-color: black;
+    width:3px;
+    height:133px;
+    position: relative;
+    z-index: 3;
+    animation: sec_anim 200s linear infinite;
+    left: 250px;
+    bottom:705px;
+}
+@keyframes sec_anim{
+    from{transform: rotate(0deg);}
+    to{transform: rotate(360deg);}
+}
+@keyframes min_anim{
+    from{transform: rotate(0deg);}
+    to{transform: rotate(360deg);}
+}
+@keyframes hour_anim{
+    from{transform: rotate(0deg);}
+    to{transform: rotate(360deg);}
+}
+

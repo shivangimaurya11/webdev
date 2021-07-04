@@ -1,0 +1,125 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+h3{
+    color:#DBE6FD;
+    margin-left:10px;
+}
+.far{
+    margin-right: 10px;
+}
+.num{
+    color:#DBE6FD;
+    margin-right: 40px;
+}
+body{
+    width: 100%;
+    background-image: url("stars.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+.wrapper{
+    margin: 30px auto;
+    max-width: 100%;
+    width: 100%;
+    border-radius: 10px;
+    padding: 25px;
+}
+.wrapper header{
+    font-size: 30px;
+    font-weight: 600;
+}
+.wrapper .inputfield{
+    display: flex;
+    height: 45px;
+    width: 100%;
+    margin: 20px 0;
+}
+.inputfield input{
+    width: 93%;
+    height: 100%;
+    border: 1px solid bisque;
+    font-size: 17px;
+    border-radius: 10px;
+    padding-left: 15px;
+    background-color: #C8C6A7;
+    opacity: 0.5;
+
+}
+
+.inputfield button{
+    width: 60px;
+    height: 100%;
+    border: none;
+    outline: none;
+    background:#0F3057;
+    color: wheat;
+    font-size: 22px;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-left: 10px;
+    opacity: 0.6;
+    pointer-events: none;
+
+}
+.inputfield button:hover{
+background-color: #CC561E;
+}
+.inputfield button.active{
+    opacity: 1;
+    pointer-events: auto;
+}
+.wrapper .todoList{
+    max-width: 1400px;
+    overflow-y: auto;
+}
+.todoList li{
+    list-style: none;
+    height: 45px;
+    line-height: 45px;
+    position: relative;
+    background: #C8C6A7;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    padding:0 15px;
+    opacity: 0.8;
+    cursor: default;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+.todoList li span{
+    position: absolute;
+    right: -50px;
+    background: #810000;
+    color: white;
+    width: 50px;
+    text-align: center;
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
+}
+.todoList li:hover span{
+    right: 0px;
+
+}
+.wrapper footer{
+    display: flex;
+    width: 100%;
+    margin-top: 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer button{
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius:20px;
+    padding: 6px 10px;
+    background-color: #6B011F;
+    opacity:0.8;
+}

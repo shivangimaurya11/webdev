@@ -1,0 +1,26 @@
+.container{
+    background-color:#FFBCBC;
+    width:600px;
+    height:800px;
+    /* border:2px solid black; */
+    overflow:scroll;
+    margin:44px auto;
+}
+.card{
+    background-color:#D83A56;
+    width:400px;
+    height:120px;
+    border:2px solid #D83A56;
+    color:#FFA900;
+    /* margin:0px ; */
+    padding:5px;
+    border-radius:5px;
+    margin:6px auto;
+    
+    /* font-size:1.5rem; */
+
+
+}
+.thid{
+    text-align:center;
+}

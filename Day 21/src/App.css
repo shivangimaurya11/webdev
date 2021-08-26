@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+button{
+    margin: 10px;
+    height: 40px;
+    width: 100px;
+    background-color:green;
+    color: silver;
+    font-size: large;
+    font-weight: bold;
+    border-radius: 10px;
+}
+.first:hover{
+   background-color: #D5EEBB;
+   color:black;
+}
+.second{
+    height: 40px;
+    border-radius: 10px;
+    width: 50%;
+    margin-left: 20%;
+    margin-top: 5%;
+    font-size: large;
+}

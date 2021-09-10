@@ -1,0 +1,94 @@
+(integer) 1
+127.0.0.1:6379> ttl name
+(integer) -2
+127.0.0.1:6379> ttl name
+(integer) -2
+127.0.0.1:6379> SET name Shivangi
+OK
+127.0.0.1:6379> setex name 10 Shivangi
+OK
+127.0.0.1:6379> ttl name
+(integer) 7
+127.0.0.1:6379> ttl name
+(integer) 5
+127.0.0.1:6379> ttl name
+(integer) 2
+127.0.0.1:6379> ttl name
+(integer) 0
+127.0.0.1:6379> ttl name
+(integer) -2
+127.0.0.1:6379> KEYS *
+(empty list or set)
+127.0.0.1:6379> lpush xyz shivi
+(integer) 1
+127.0.0.1:6379> GET xyz
+(error) WRONGTYPE Operation against a key holding the wrong kind of value
+127.0.0.1:6379> LRANGE xyz 0 -1
+1) "shivi"
+127.0.0.1:6379> roush xyz Mimi
+(error) ERR unknown command 'roush'
+127.0.0.1:6379> LRANGE xyz 0 -1
+1) "shivi"
+127.0.0.1:6379> rpush xyz Mimi
+(integer) 2
+127.0.0.1:6379> LRANGE xyz 0 -1
+1) "shivi"
+2) "Mimi"
+127.0.0.1:6379> lpush xyz hello
+(integer) 3
+127.0.0.1:6379> LRANGE xyz 0 -1
+1) "hello"
+2) "shivi"
+3) "Mimi"
+127.0.0.1:6379> KEYS *
+1) "xyz"
+127.0.0.1:6379> lpop xyz
+"hello"
+127.0.0.1:6379> rpop xyz
+"Mimi"
+127.0.0.1:6379> LRANGE xyz 0 -1
+1) "shivi"
+127.0.0.1:6379> SADD hobbies "weight lifting"
+(integer) 1
+127.0.0.1:6379> SADD hobbies "painting"
+(integer) 1
+127.0.0.1:6379> SADD hobbies "painting"
+(integer) 0
+127.0.0.1:6379> SMEMBERS hobbies
+1) "painting"
+2) "weight lifting"
+127.0.0.1:6379> SADD hobbies "reading"
+(integer) 1
+127.0.0.1:6379> SMEMBERS hobbies
+1) "reading"
+2) "painting"
+3) "weight lifting"
+127.0.0.1:6379> HSET person name Mimi
+(integer) 1
+127.0.0.1:6379> HGET person name
+"Mimi"
+127.0.0.1:6379> HGETALL person
+1) "name"
+2) "Mimi"
+127.0.0.1:6379> HSET person age 20
+(integer) 1
+127.0.0.1:6379> HGETALL person
+1) "name"
+2) "Mimi"
+3) "age"
+4) "20"
+127.0.0.1:6379> HDEL person age
+(integer) 1
+127.0.0.1:6379> HGETall person
+1) "name"
+2) "Mimi"
+127.0.0.1:6379> HEXIST person
+(error) ERR unknown command 'HEXIST'
+127.0.0.1:6379> HEXISTS person
+(error) ERR wrong number of arguments for 'hexists' command
+127.0.0.1:6379> HEXISTS personname
+(error) ERR wrong number of arguments for 'hexists' command
+127.0.0.1:6379> HEXISTS person name
+(integer) 1
+127.0.0.1:6379> LRANGE friends 1 1
+(empty list or set)

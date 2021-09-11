@@ -1,0 +1,264 @@
+ [localhost]:
+Database [postgres]:
+Port [5432]:
+Username [postgres]:
+Password for user postgres:
+psql (12.8)
+WARNING: Console code page (437) differs from Windows code page (1252)
+         8-bit characters might not work correctly. See psql reference
+         page "Notes for Windows users" for details.
+Type "help" for help.
+
+postgres=# \c devs
+You are now connected to database "devs" as user "postgres".
+devs=# CREATE TABLE COMPANY(
+devs(# ID INT PRIMARY KEY NOT NULL,
+devs(# NAME TEXT NOT NULL,
+devs(# AGE INT NOT NULL,
+devs(# ADDRESS CHAR[50],
+devs(# SALARY REAL,
+devs(# JOIN_DATE DATE);
+CREATE TABLE
+devs=# INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY,JOIN_DATE) VALUES (1,'Shivangi',21,'India',2000.99,'2002-07-13');
+ERROR:  malformed array literal: "India"
+LINE 1: ...ADDRESS,SALARY,JOIN_DATE) VALUES (1,'Shivangi',21,'India',20...
+                                                             ^
+DETAIL:  Array value must start with "{" or dimension information.
+devs=# DROP TABLE COMPANY;
+DROP TABLE
+devs=# CREATE TABLE COMPANY(
+devs(# ID INT PRIMARY KEY NOT NULL,
+devs(# NAME TEXT NOT NULL,
+devs(# AGE INT NOT NULL,
+devs(# ADDRESS CHAR(50),
+devs(# SALARY REAL,
+devs(# JOIN_DATE DATE);
+CREATE TABLE
+devs=# INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY,JOIN_DATE) VALUES (1,'Shivangi',21,'India',200000.99,'2002-07-12');
+INSERT 0 1
+devs=# \d
+           List of relations
+ Schema |    Name    | Type  |  Owner
+--------+------------+-------+----------
+ public | company    | table | postgres
+ public | department | table | postgres
+(2 rows)
+
+
+devs=# \l
+                                         List of databases
+   Name    |  Owner   | Encoding |      Collate       |       Ctype        |   Access privileges
+-----------+----------+----------+--------------------+--------------------+-----------------------
+ devs      | postgres | UTF8     | English_India.1252 | English_India.1252 | =Tc/postgres         +
+           |          |          |                    |                    | postgres=CTc/postgres+
+           |          |          |                    |                    | devnest=CTc/postgres
+ postgres  | postgres | UTF8     | English_India.1252 | English_India.1252 |
+ template0 | postgres | UTF8     | English_India.1252 | English_India.1252 | =c/postgres          +
+           |          |          |                    |                    | postgres=CTc/postgres
+ template1 | postgres | UTF8     | English_India.1252 | English_India.1252 | =c/postgres          +
+           |          |          |                    |                    | postgres=CTc/postgres
+(4 rows)
+
+
+devs=# CREATE SCHEMA mySchema;
+CREATE SCHEMA
+devs=# DROP SCHEMA mySchema CASCADE;
+DROP SCHEMA
+devs=# SELECT * FROM COMPANY;
+ id |   name   | age |                      address                       |  salary   | join_date
+----+----------+-----+----------------------------------------------------+-----------+------------
+  1 | Shivangi |  21 | India                                              | 200000.98 | 2002-07-12
+(1 row)
+
+
+devs=# INSERT INTO COMAPANY (ID,NAME,AGE,ADDRESS,SALARY,JOIN_DATE) VALUES (1,'Mimi',29,'Korea',300000.23,'2023-09-11');
+ERROR:  relation "comapany" does not exist
+LINE 1: INSERT INTO COMAPANY (ID,NAME,AGE,ADDRESS,SALARY,JOIN_DATE) ...
+                    ^
+devs=# INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY,JOIN_DATE) VALUES (1,'Mimi',20,'korea',2000000.00,'2023-09-23');
+ERROR:  duplicate key value violates unique constraint "company_pkey"
+DETAIL:  Key (id)=(1) already exists.
+devs=# INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY,JOIN_DATE) VALUES (2,'Mimi',29,'korea',200000.00,'2023-09-23');
+INSERT 0 1
+devs=# SELECT * FROM COMPANY;
+ id |   name   | age |                      address                       |  salary   | join_date
+----+----------+-----+----------------------------------------------------+-----------+------------
+  1 | Shivangi |  21 | India                                              | 200000.98 | 2002-07-12
+  2 | Mimi     |  29 | korea                                              |    200000 | 2023-09-23
+(2 rows)
+
+
+devs=# select (15+2) as addition;
+ addition
+----------
+       17
+(1 row)
+
+
+devs=# select (15*2) as addition;
+ addition
+----------
+       30
+(1 row)
+
+
+devs=# select count(*) as "records" from company;
+ records
+---------
+       2
+(1 row)
+
+
+devs=# select current_timestamp;
+        current_timestamp
+----------------------------------
+ 2021-09-11 14:44:37.298639+05:30
+(1 row)
+
+
+devs=# select * from company where age>=25 and salary>=4500;
+ id | name | age |                      address                       | salary | join_date
+----+------+-----+----------------------------------------------------+--------+------------
+  2 | Mimi |  29 | korea                                              | 200000 | 2023-09-23
+(1 row)
+
+
+devs=# select * from company where age is not null;
+ id |   name   | age |                      address                       |  salary   | join_date
+----+----------+-----+----------------------------------------------------+-----------+------------
+  1 | Shivangi |  21 | India                                              | 200000.98 | 2002-07-12
+  2 | Mimi     |  29 | korea                                              |    200000 | 2023-09-23
+(2 rows)
+
+
+devs=# select * from company where name like 'S%';
+ id |   name   | age |                      address                       |  salary   | join_date
+----+----------+-----+----------------------------------------------------+-----------+------------
+  1 | Shivangi |  21 | India                                              | 200000.98 | 2002-07-12
+(1 row)
+
+
+devs=# select * from  company where name like 'S_ivangi';
+ id |   name   | age |                      address                       |  salary   | join_date
+----+----------+-----+----------------------------------------------------+-----------+------------
+  1 | Shivangi |  21 | India                                              | 200000.98 | 2002-07-12
+(1 row)
+
+
+devs=# \d company;
+                   Table "public.company"
+  Column   |     Type      | Collation | Nullable | Default
+-----------+---------------+-----------+----------+---------
+ id        | integer       |           | not null |
+ name      | text          |           | not null |
+ age       | integer       |           | not null |
+ address   | character(50) |           |          |
+ salary    | real          |           |          |
+ join_date | date          |           |          |
+Indexes:
+    "company_pkey" PRIMARY KEY, btree (id)
+
+
+devs=# select * from company where salary::text like '200&';
+ id | name | age | address | salary | join_date
+----+------+-----+---------+--------+-----------
+(0 rows)
+
+
+devs=# select * from company where salary::text like '200%';
+ id |   name   | age |                      address                       |  salary   | join_date
+----+----------+-----+----------------------------------------------------+-----------+------------
+  1 | Shivangi |  21 | India                                              | 200000.98 | 2002-07-12
+  2 | Mimi     |  29 | korea                                              |    200000 | 2023-09-23
+(2 rows)
+
+
+devs=# select * from company where age between 25 and 27;
+ id | name | age | address | salary | join_date
+----+------+-----+---------+--------+-----------
+(0 rows)
+
+
+devs=# select * from company where age in (19,30);
+ id | name | age | address | salary | join_date
+----+------+-----+---------+--------+-----------
+(0 rows)
+
+
+devs=# update company set salary=150000 where id=1;
+UPDATE 1
+devs=# \d company;
+                   Table "public.company"
+  Column   |     Type      | Collation | Nullable | Default
+-----------+---------------+-----------+----------+---------
+ id        | integer       |           | not null |
+ name      | text          |           | not null |
+ age       | integer       |           | not null |
+ address   | character(50) |           |          |
+ salary    | real          |           |          |
+ join_date | date          |           |          |
+Indexes:
+    "company_pkey" PRIMARY KEY, btree (id)
+
+
+devs=# select * from company;
+ id |   name   | age |                      address                       | salary | join_date
+----+----------+-----+----------------------------------------------------+--------+------------
+  2 | Mimi     |  29 | korea                                              | 200000 | 2023-09-23
+  1 | Shivangi |  21 | India                                              | 150000 | 2002-07-12
+(2 rows)
+
+
+devs=# update company set address='California',salary=200000 where id=2;
+UPDATE 1
+devs=# select * company;
+ERROR:  syntax error at or near "company"
+LINE 1: select * company;
+                 ^
+devs=# select * from company;
+ id |   name   | age |                      address                       | salary | join_date
+----+----------+-----+----------------------------------------------------+--------+------------
+  1 | Shivangi |  21 | India                                              | 150000 | 2002-07-12
+  2 | Mimi     |  29 | California                                         | 200000 | 2023-09-23
+(2 rows)
+
+
+devs=# delete from company where id=2;
+DELETE 1
+devs=# select * from company;
+ id |   name   | age |                      address                       | salary | join_date
+----+----------+-----+----------------------------------------------------+--------+------------
+  1 | Shivangi |  21 | India                                              | 150000 | 2002-07-12
+(1 row)
+
+
+devs=# \d
+           List of relations
+ Schema |    Name    | Type  |  Owner
+--------+------------+-------+----------
+ public | company    | table | postgres
+ public | department | table | postgres
+(2 rows)
+
+
+devs=# CREATE TABLE CUSTOMERS(
+devs(# customer_id INT GENERATED ALWAYS AS IDENTITY,
+devs(# customer_name VARCHAR(225) not null,
+devs(# primary key(customer_id)
+devs(# );
+CREATE TABLE
+devs=# create table contracts(
+devs(# contact_id INT NOT NULL,
+devs(# customer_id INT,
+devs(# contact_name VARCHAR(255) not null,
+devs(# phone varchar(15),
+devs(# email VARCHAR(100),
+devs(# primary key(contact_id)
+devs(# constraint foreign_key_customer
+devs(# foreign key(customer_id)
+devs(# refernces customers(customer_id)
+devs(# );
+ERROR:  syntax error at or near "constraint"
+LINE 8: constraint foreign_key_customer
+        ^
+devs=#

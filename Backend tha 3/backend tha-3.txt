@@ -1,0 +1,33 @@
+127.0.0.1:6379> PUBLISH devnest hello
+(integer) 1
+127.0.0.1:6379> PUBLISH devnest MIMI
+(integer) 1
+127.0.0.1:6379> PUBLISH devnest hello
+(integer) 1
+127.0.0.1:6379> PUBLISH devnest do
+(integer) 1
+127.0.0.1:6379> PUNSUBSCRIBE d*
+1) "punsubscribe"
+2) "d*"
+3) (integer) 0
+127.0.0.1:6379> PUBLISH devnest do
+(integer) 1
+127.0.0.1:6379>
+127.0.0.1:6379> PSUBSCRIBE d*
+Reading messages... (press Ctrl-C to quit)
+1) "psubscribe"
+2) "d*"
+3) (integer) 1
+1) "pmessage"
+2) "d*"
+3) "devnest"
+4) "hello"
+1) "pmessage"
+2) "d*"
+3) "devnest"
+4) "do"
+1) "pmessage"
+2) "d*"
+3) "devnest"
+4) "do"
+-----------------------------------------------------------------------------------------------------

@@ -1,0 +1,487 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\HP\Desktop\backend tha 5> node
+Welcome to Node.js v14.17.3.
+Type ".help" for more information.
+> 1+1
+2
+> var fs=require("fs");
+undefined
+> fs.mkdirSync('day1');
+undefined
+>  .exit
+PS C:\Users\HP\Desktop\backend tha 5> mkdir day2
+
+
+    Directory: C:\Users\HP\Desktop\backend tha 5
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        14-09-2021     19:56                day2
+
+
+PS C:\Users\HP\Desktop\backend tha 5> node
+Welcome to Node.js v14.17.3.      
+Type ".help" for more information.
+> var fs=recquire("fs");
+Uncaught ReferenceError: recquire is not defined
+> var fs=require("fs");
+undefined
+> fs.writeFilesSync("day1/hello.txt","hello awesome people",(err)=>{
+... if(err){
+..... console.log(err);
+..... }
+... };
+};
+^
+
+Uncaught SyntaxError: missing ) after argument list
+> fs.writeFileSync("day1/hello.txt","hello awesome people",(err)=>{
+... if(err)
+... console.log(err);
+... }
+...
+... };
+}
+^
+
+Uncaught SyntaxError: missing ) after argument list
+> fs.writeFileSync("day1/hello.txt","hello awesome people",(err)=>{
+... if(err)
+... {
+..... console.log(err);
+..... }
+... };
+};
+^
+
+Uncaught SyntaxError: missing ) after argument list
+> fs.writeFileSync("day1/hello.txt","hello awesome people",(err)=>{
+... if(err)
+... {
+..... console.log(err);
+..... }
+... });
+undefined
+> fs.appendFileSync("day1/hello.txt","appended");
+undefined
+> fs.readFileSync("day1/"hello.txt");
+fs.readFileSync("day1/"hello.txt");
+                ^^^^^^^
+
+Uncaught SyntaxError: missing ) after argument list
+> Windows PowerShell
+Windows PowerShell
+        ^^^^^^^^^^
+
+Uncaught SyntaxError: Unexpected identifier
+> Copyright (C) Microsoft Corporation. All rights reserved.
+Copyright (C) Microsoft Corporation. All rights reserved.
+              ^^^^^^^^^
+
+Uncaught SyntaxError: Unexpected identifier
+>
+> Try the new cross-platform PowerShell https://aka.ms/pscore6
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+    ^^^
+
+Uncaught SyntaxError: Unexpected identifier
+>
+> PS C:\Users\HP\Desktop\backend tha 5> node
+PS C:\Users\HP\Desktop\backend tha 5> node
+   ^
+
+Uncaught SyntaxError: Unexpected identifier
+> Welcome to Node.js v14.17.3.
+Welcome to Node.js v14.17.3.
+        ^^
+
+Uncaught SyntaxError: Unexpected identifier
+> Type ".help" for more information.
+Type ".help" for more information.
+     ^^^^^^^
+
+Uncaught SyntaxError: Unexpected string
+> > 1+1
+> 1+1
+^
+
+Uncaught SyntaxError: Unexpected token '>'
+> 2
+2
+> > var fs=require("fs");
+> var fs=require("fs");
+^
+
+Uncaught SyntaxError: Unexpected token '>'
+> undefined
+undefined
+> > fs.mkdirSync('day1');
+> fs.mkdirSync('day1');
+^
+
+Uncaught SyntaxError: Unexpected token '>'
+> undefined
+undefined
+> >  .exit
+>  .exit
+^
+
+Uncaught SyntaxError: Unexpected token '>'
+> PS C:\Users\HP\Desktop\backend tha 5> mkdir day2
+PS C:\Users\HP\Desktop\backend tha 5> mkdir day2
+   ^
+
+Uncaught SyntaxError: Unexpected identifier
+>
+>
+>     Directory: C:\Users\HP\Desktop\backend tha 5
+    Directory: C:\Users\HP\Desktop\backend tha 5
+                 ^
+
+Uncaught SyntaxError: Invalid or unexpected token
+>
+>
+> Mode                 LastWriteTime         Length Name
+Mode                 LastWriteTime         Length Name
+                     ^^^^^^^^^^^^^
+
+Uncaught SyntaxError: Unexpected identifier
+> ----                 -------------         ------ ----
+... d-----        14-09-2021     19:56                day2
+d-----        14-09-2021     19:56                day2
+^^^
+
+Uncaught SyntaxError: Invalid left-hand side expression in prefix operation
+>
+>
+> PS C:\Users\HP\Desktop\backend tha 5> node
+PS C:\Users\HP\Desktop\backend tha 5> node
+   ^
+
+Uncaught SyntaxError: Unexpected identifier
+> Welcome to Node.js v14.17.3.
+Welcome to Node.js v14.17.3.
+        ^^
+
+Uncaught SyntaxError: Unexpected identifier
+> Type ".help" for more information.
+Type ".help" for more information.
+     ^^^^^^^
+
+Uncaught SyntaxError: Unexpected string
+> > var fs=recquire("fs");
+> var fs=recquire("fs");
+^
+
+Uncaught SyntaxError: Unexpected token '>'
+> Uncaught ReferenceError: recquire is not defined
+Uncaught ReferenceError: recquire is not defined
+         ^^^^^^^^^^^^^^
+
+Uncaught SyntaxError: Unexpected identifier
+> > var fs=require("fs");
+> var fs=require("fs");
+^
+
+Uncaught SyntaxError: Unexpected token '>'
+> undefined
+sing ) after argument list
+undefined
+> > fs.writeFilesSync("day1/hello.txt","hello awesome people",(err)=>{
+> fs.writeFilesSync("day1/hello.txt","hello awesome people",(err)=>{  
+^
+
+Uncaught SyntaxError: Unexpected token '>'
+> ... if(err){
+... if(err){
+    ^^
+
+Uncaught SyntaxError: Unexpected token 'if'
+> ..... console.log(err);
+..... console.log(err);
+   ^
+
+Uncaught SyntaxError: Unexpected token '.'
+> ..... }
+..... }
+   ^
+
+Uncaught SyntaxError: Unexpected token '.'
+> ... };
+... };
+    ^
+
+Uncaught SyntaxError: Unexpected token '}'
+> };
+};
+^
+
+Uncaught SyntaxError: Unexpected token '}'
+> ^
+^
+^
+
+Uncaught SyntaxError: Unexpected token '^'
+>
+> Uncaught SyntaxError: missing ) after argument list
+Uncaught SyntaxError: missing ) after argument list
+         ^^^^^^^^^^^
+
+Uncaught SyntaxError: Unexpected identifier
+> > fs.writeFileSync("day1/hello.txt","hello awesome people",(err)=>{ 
+> fs.writeFileSync("day1/hello.txt","hello awesome people",(err)=>{   
+^
+
+Uncaught SyntaxError: Unexpected token '>'
+> ... if(err)
+... if(err)
+    ^^
+
+Uncaught SyntaxError: Unexpected token 'if'
+> ... console.log(err);
+... console.log(err);
+^^^
+
+Uncaught SyntaxError: Unexpected token '...'
+> ... }
+... }
+    ^
+
+Uncaught SyntaxError: Unexpected token '}'
+> ...
+
+
+
+Uncaught SyntaxError: Unexpected end of input
+> ... };
+... };
+    ^
+
+Uncaught SyntaxError: Unexpected token '}'
+> }
+}
+^
+
+Uncaught SyntaxError: Unexpected token '}'
+> ^
+^
+^
+
+Uncaught SyntaxError: Unexpected token '^'
+>
+> Uncaught SyntaxError: mis> fs.writeFileSync("day1/hello.txt","hello 
+awesome people",(err)=>{
+Uncaught SyntaxError: mis> fs.writeFileSync("day1/hello.txt","hello awesome people",(err)=>{
+         ^^^^^^^^^^^
+
+Uncaught SyntaxError: Unexpected identifier
+> ... if(err)
+... if(err)
+    ^^
+
+Uncaught SyntaxError: Unexpected token 'if'
+> ... {
+
+
+
+Uncaught SyntaxError: Unexpected end of input
+> ..... console.log(err);
+..... console.log(err);
+   ^
+
+Uncaught SyntaxError: Unexpected token '.'
+> ..... }
+..... }
+   ^
+
+Uncaught SyntaxError: Unexpected token '.'
+> ... };
+... };
+    ^
+
+Uncaught SyntaxError: Unexpected token '}'
+> };
+};
+^
+
+Uncaught SyntaxError: Unexpected token '}'
+> ^
+^
+^
+
+Uncaught SyntaxError: Unexpected token '^'
+>
+> Uncaught SyntaxError: missing ) after argument list
+Uncaught SyntaxError: missing ) after argument list
+         ^^^^^^^^^^^
+
+Uncaught SyntaxError: Unexpected identifier
+> > fs.writeFileSync("day1/hello.txt","hello awesome people",(err)=>{ 
+> fs.writeFileSync("day1/hello.txt","hello awesome people",(err)=>{   
+^
+
+Uncaught SyntaxError: Unexpected token '>'
+> ... if(err)
+... if(err)
+    ^^
+
+Uncaught SyntaxError: Unexpected token 'if'
+> ... {
+
+
+
+Uncaught SyntaxError: Unexpected end of input
+> ..... console.log(err);
+..... console.log(err);
+   ^
+
+Uncaught SyntaxError: Unexpected token '.'
+> ..... }
+..... }
+   ^
+
+Uncaught SyntaxError: Unexpected token '.'
+> ... });
+... });
+    ^
+
+Uncaught SyntaxError: Unexpected token '}'
+> undefined
+undefined
+> > fs.appendFileSync("day1/hello.txt","appended");
+> fs.appendFileSync("day1/hello.txt","appended");
+^
+
+Uncaught SyntaxError: Unexpected token '>'
+> undefined
+undefined
+> > fs.readFileSync("day1/"hello.txt");
+> fs.readFileSync("day1/"hello.txt");
+^
+
+Uncaught SyntaxError: Unexpected token '>'
+> fs.readFileSync("day1/"hello.txt");
+fs.readFileSync("day1/"hello.txt");
+                ^^^^^^^
+
+Uncaught SyntaxError: missing ) after argument list
+>                 ^^^^^^
+                ^^^^^^
+                ^
+
+Uncaught SyntaxError: Unexpected token '^'
+> fs.readFileSync("day1/hello.txt");
+<Buffer 68 65 6c 6c 6f 20 61 77 65 73 6f 6d 65 20 70 65 6f 70 6c 65 61 70 70 65 6e 64 65 64>
+> fs.readFileSync("day1/hello.txt","utf-8");
+'hello awesome peopleappended'
+> var data=fs.readFileSync("day1/hello.txt","utf-8");
+undefined
+> console.log(data);
+hello awesome peopleappended
+undefined
+> fs.renameSync("day1/hello.txt","day1/hello2.txt");
+undefined
+> fs.unlinkSync("day1/hello2.txt")
+undefined
+> fs.rmdir('day1');
+Uncaught:
+TypeError [ERR_INVALID_CALLBACK]: Callback must be a function. Received undefined
+    at makeCallback (fs.js:177:11)
+    at Object.rmdir (fs.js:880:14)
+    at REPL341:1:4
+    at Script.runInThisContext (vm.js:134:12)
+    at REPLServer.defaultEval (repl.js:486:29)
+    at bound (domain.js:416:15)
+    at REPLServer.runBound [as eval] (domain.js:427:12)
+    at REPLServer.emit (events.js:387:35)
+    at REPLServer.emit (domain.js:470:12) {
+  code: 'ERR_INVALID_CALLBACK'
+}
+> fs.rmdirSync('day1');
+undefined
+> .exit
+PS C:\Users\HP\Desktop\backend tha 5> node
+Welcome to Node.js v14.17.3.
+Type ".help" for more information.
+> 1+1
+2
+> .exit
+PS C:\Users\HP\Desktop\backend tha 5> node index.js
+internal/modules/cjs/loader.js:905
+  throw err;
+  ^
+
+Error: Cannot find module 'C:\Users\HP\Desktop\backend tha 5\index.js'    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:902:15)
+    at Function.Module._load (internal/modules/cjs/loader.js:746:27)  
+    at Function.executeUserEntryPoint [as runMain] (internal/modules/r    at internal/main/run_main_module.js:17:47 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+PS C:\Users\HP\Desktop\backend tha 5> node
+Welcome to Node.js v14.17.3.
+Type ".help" for more information.
+> node index.js
+node index.js
+     ^^^^^
+
+Uncaught SyntaxError: Unexpected identifier
+> .exit
+PS C:\Users\HP\Desktop\backend tha 5> node index.js
+  throw err;
+  ^
+
+Error: Cannot find module 'C:\Users\HP\Desktop\backend tha 5\index.js'    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:902:15)
+    at Function.Module._load (internal/modules/cjs/loader.js:746:27)  
+    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:76:12)
+    at internal/main/run_main_module.js:17:47 {
+internal/modules/cjs/loader.js:905
+  throw err;
+  ^
+
+Error: Cannot find module 'C:\Users\HP\Desktop\backend tha 5\index.js'    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:902:15)
+    at Function.Module._load (internal/modules/cjs/loader.js:746:27)  
+    at Function.executeUserEntryPoint [as runMain] (internal/modules/r    at internal/main/run_main_module.js:17:47 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+PS C:\Users\HP\Desktop\backend tha 5> cd index
+cd : Cannot find path 'C:\Users\HP\Desktop\backend tha 5\index'       
+because it does not exist.
+At line:1 char:1
++ cd index
++ ~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\Users\HP\Desktop\b  
+   ackend tha 5\index:String) [Set-Location], ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Comm
+   ands.SetLocationCommand
+
+PS C:\Users\HP\Desktop\backend tha 5> node index.js
+PS C:\Users\HP\Desktop\backend tha 5> node index.js
+PS C:\Users\HP\Desktop\backend tha 5> node index.js
+PS C:\Users\HP\Desktop\backend tha 5> node
+Welcome to Node.js v14.17.3.
+Type ".help" for more information.
+> node index.js
+node index.js
+     ^^^^^
+
+Uncaught SyntaxError: Unexpected identifier
+> .exit
+PS C:\Users\HP\Desktop\backend tha 5> node index.js
+PS C:\Users\HP\Desktop\backend tha 5> node
+Welcome to Node.js v14.17.3.
+Type ".help" for more information.
+> node index.js
+node index.js
+     ^^^^^
+
+Uncaught SyntaxError: Unexpected identifier
+> index;js
+Uncaught ReferenceError: index is not defined
+> .exit
+PS C:\Users\HP\Desktop\backend tha 5>
